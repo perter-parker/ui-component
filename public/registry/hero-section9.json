@@ -1,0 +1,18 @@
+{
+  "name": "hero-section9",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "blocks/marketing/hero/HeroSection9.tsx",
+      "content": "import * as React from \"react\";\nimport { ArrowRight } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface HeroSection9Props {\n  headline: string;\n  description: string;\n  primaryAction?: {\n    label: string;\n    onClick?: () => void;\n    href?: string;\n  };\n  videoSrc?: string;\n  videoPoster?: string;\n  className?: string;\n}\n\nexport function HeroSection9({\n  headline,\n  description,\n  primaryAction,\n  videoSrc,\n  videoPoster,\n  className,\n}: HeroSection9Props) {\n  return (\n    <section className={cn(\"container py-24 md:py-32\", className)}>\n      {/* Centered Text */}\n      <div className=\"flex flex-col items-center text-center gap-6 max-w-3xl mx-auto mb-12\">\n        <h1 className=\"text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl\">\n          {headline}\n        </h1>\n        <p className=\"text-lg text-muted-foreground md:text-xl\">\n          {description}\n        </p>\n        {primaryAction && (\n          <Button\n            size=\"lg\"\n            className=\"w-full sm:w-auto\"\n            onClick={primaryAction.onClick}\n            asChild={!!primaryAction.href}\n          >\n            {primaryAction.href ? (\n              <a href={primaryAction.href} className=\"flex items-center gap-2\">\n                {primaryAction.label}\n                <ArrowRight className=\"size-4\" />\n              </a>\n            ) : (\n              <>\n                {primaryAction.label}\n                <ArrowRight className=\"size-4\" />\n              </>\n            )}\n          </Button>\n        )}\n      </div>\n\n      {/* Full Width Video */}\n      <div className=\"relative w-full aspect-video overflow-hidden rounded-lg bg-[#1a1a1a]\">\n        {videoSrc ? (\n          <video\n            src={videoSrc}\n            poster={videoPoster}\n            className=\"w-full h-full object-cover\"\n            controls\n          />\n        ) : (\n          <div className=\"flex h-full w-full items-center justify-center min-h-[400px]\">\n            <div className=\"flex flex-col items-center justify-center gap-2 text-muted-foreground\">\n              <div className=\"size-16 rounded-full border-2 border-dashed border-muted-foreground/30 flex items-center justify-center\">\n                <svg\n                  className=\"size-8 text-muted-foreground/50\"\n                  fill=\"none\"\n                  stroke=\"currentColor\"\n                  viewBox=\"0 0 24 24\"\n                >\n                  <path\n                    strokeLinecap=\"round\"\n                    strokeLinejoin=\"round\"\n                    strokeWidth={2}\n                    d=\"M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z\"\n                  />\n                </svg>\n              </div>\n              <p className=\"text-sm text-muted-foreground/70\">Hero section video</p>\n            </div>\n          </div>\n        )}\n      </div>\n    </section>\n  );\n}\n\n",
+      "type": "registry:block",
+      "target": "components/blocks/marketing/hero/HeroSection9.tsx"
+    }
+  ]
+}

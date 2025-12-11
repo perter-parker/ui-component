@@ -1,0 +1,52 @@
+import type { Meta, StoryObj } from '@storybook/react'
+import { RadioGroup, RadioGroupItem } from './RadioRroup'
+import { Label } from '@/components/ui/label'
+
+const meta = {
+  title: 'UI/RadioGroup',
+  component: RadioGroup,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+} satisfies Meta<typeof RadioGroup>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {
+  render: () => (
+    <RadioGroup defaultValue="option-one">
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="option-one" id="option-one" />
+        <Label htmlFor="option-one">Option One</Label>
+      </div>
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="option-two" id="option-two" />
+        <Label htmlFor="option-two">Option Two</Label>
+      </div>
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="option-three" id="option-three" />
+        <Label htmlFor="option-three">Option Three</Label>
+      </div>
+    </RadioGroup>
+  ),
+}
+
+export const Disabled: Story = {
+  render: () => (
+    <RadioGroup defaultValue="option-one">
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="option-one" id="option-one-disabled" />
+        <Label htmlFor="option-one-disabled">Option One</Label>
+      </div>
+      <div className="flex items-center space-x-2">
+        <RadioGroupItem value="option-two" id="option-two-disabled" disabled />
+        <Label htmlFor="option-two-disabled" className="opacity-50">
+          Option Two (Disabled)
+        </Label>
+      </div>
+    </RadioGroup>
+  ),
+}
+

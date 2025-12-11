@@ -1,0 +1,16 @@
+{
+  "name": "navbar5",
+  "type": "registry:block",
+  "dependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "blocks/marketing/navbars/Navbar5.tsx",
+      "content": "import * as React from \"react\";\nimport Link from \"next/link\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface Navbar5Props {\n  logo?: React.ReactNode;\n  logoHref?: string;\n  links: Array<{\n    label: string;\n    href: string;\n  }>;\n  primaryButton: {\n    label: string;\n    href?: string;\n    onClick?: () => void;\n  };\n  secondaryButton: {\n    label: string;\n    href?: string;\n    onClick?: () => void;\n  };\n  className?: string;\n}\n\nexport function Navbar5({\n  logo,\n  logoHref = \"/\",\n  links,\n  primaryButton,\n  secondaryButton,\n  className,\n}: Navbar5Props) {\n  return (\n    <nav className={cn(\"w-full border-b bg-background\", className)}>\n      <div className=\"container flex h-16 items-center justify-between px-4\">\n        {/* Logo */}\n        <div className=\"flex items-center\">\n          {logoHref ? (\n            <Link href={logoHref} className=\"flex items-center\">\n              {logo || (\n                <div className=\"size-8 rounded bg-foreground flex items-center justify-center\">\n                  <div className=\"size-4 border-l-2 border-background rotate-45\" />\n                </div>\n              )}\n            </Link>\n          ) : (\n            <div className=\"flex items-center\">\n              {logo || (\n                <div className=\"size-8 rounded bg-foreground flex items-center justify-center\">\n                  <div className=\"size-4 border-l-2 border-background rotate-45\" />\n                </div>\n              )}\n            </div>\n          )}\n        </div>\n\n        {/* Centered Links */}\n        <div className=\"hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2\">\n          {links.map((link, index) => (\n            <Link\n              key={index}\n              href={link.href}\n              className=\"text-sm font-medium text-foreground hover:text-foreground/80 transition-colors\"\n            >\n              {link.label}\n            </Link>\n          ))}\n        </div>\n\n        {/* Two Buttons */}\n        <div className=\"flex items-center gap-3 ml-auto\">\n          <Button\n            variant=\"outline\"\n            onClick={secondaryButton.onClick}\n            asChild={!!secondaryButton.href}\n            className=\"w-full sm:w-auto\"\n          >\n            {secondaryButton.href ? (\n              <Link href={secondaryButton.href}>{secondaryButton.label}</Link>\n            ) : (\n              secondaryButton.label\n            )}\n          </Button>\n          <Button\n            onClick={primaryButton.onClick}\n            asChild={!!primaryButton.href}\n            className=\"w-full sm:w-auto\"\n          >\n            {primaryButton.href ? (\n              <Link href={primaryButton.href}>{primaryButton.label}</Link>\n            ) : (\n              primaryButton.label\n            )}\n          </Button>\n        </div>\n      </div>\n    </nav>\n  );\n}\n\n",
+      "type": "registry:block",
+      "target": "components/blocks/marketing/navbars/Navbar5.tsx"
+    }
+  ]
+}

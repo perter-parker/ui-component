@@ -1,0 +1,16 @@
+{
+  "name": "feature-section9",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "blocks/marketing/feature/FeatureSection9.tsx",
+      "content": "import * as React from \"react\";\nimport { Rocket } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface FeatureSection9Props {\n  headline: string;\n  description: string;\n  features: Array<{\n    icon?: React.ReactNode;\n    title: string;\n    description: string;\n  }>;\n  className?: string;\n}\n\nexport function FeatureSection9({\n  headline,\n  description,\n  features,\n  className,\n}: FeatureSection9Props) {\n  return (\n    <section className={cn(\"container py-24 md:py-32\", className)}>\n      <div className=\"flex flex-col gap-12\">\n        {/* Centered Text */}\n        <div className=\"flex flex-col gap-6 text-center max-w-3xl mx-auto\">\n          <h2 className=\"text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl\">\n            {headline}\n          </h2>\n          <p className=\"text-lg text-muted-foreground md:text-xl\">\n            {description}\n          </p>\n        </div>\n\n        {/* Four Horizontal Feature Icons */}\n        <div className=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6\">\n          {features.map((feature, index) => (\n            <div\n              key={index}\n              className=\"flex flex-col gap-4 p-6 rounded-lg border bg-card\"\n            >\n              <div className=\"size-12 rounded-lg bg-muted flex items-center justify-center\">\n                {feature.icon || <Rocket className=\"size-6\" />}\n              </div>\n              <h3 className=\"text-lg font-semibold\">{feature.title}</h3>\n              <p className=\"text-sm text-muted-foreground\">\n                {feature.description}\n              </p>\n            </div>\n          ))}\n        </div>\n      </div>\n    </section>\n  );\n}\n\n",
+      "type": "registry:block",
+      "target": "components/blocks/marketing/feature/FeatureSection9.tsx"
+    }
+  ]
+}

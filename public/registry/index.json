@@ -1,0 +1,360 @@
+[
+  {
+    "name": "f-a-q-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "accordion",
+      "button"
+    ]
+  },
+  {
+    "name": "feature-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "feature-section10",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
+    "name": "feature-section11",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
+    "name": "feature-section12",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "avatar",
+      "button"
+    ]
+  },
+  {
+    "name": "feature-section2",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "feature-section3",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
+    "name": "feature-section4",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "feature-section5",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
+    "name": "feature-section6",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "feature-section7",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "feature-section8",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "feature-section9",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
+    "name": "footer-section2",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "button",
+      "input"
+    ]
+  },
+  {
+    "name": "hero-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "hero-section10",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "hero-section11",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "hero-section12",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "avatar",
+      "button"
+    ]
+  },
+  {
+    "name": "hero-section2",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "hero-section3",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "hero-section4",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "input"
+    ]
+  },
+  {
+    "name": "hero-section5",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "input"
+    ]
+  },
+  {
+    "name": "hero-section6",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "hero-section7",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "hero-section8",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "avatar",
+      "button"
+    ]
+  },
+  {
+    "name": "hero-section9",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "navbar1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "navbar2",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "navbar3",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "navbar4",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "navbar5",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "navbar6",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "dropdown-menu",
+      "sheet"
+    ]
+  },
+  {
+    "name": "pricing-section4",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button",
+      "toggle-group"
+    ]
+  },
+  {
+    "name": "testimonial-section4",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "avatar"
+    ]
+  }
+]
