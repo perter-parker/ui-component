@@ -8,7 +8,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from './Drawer'
+} from './drawer'
 import { Button } from '@/components/ui/button'
 import * as React from 'react'
 

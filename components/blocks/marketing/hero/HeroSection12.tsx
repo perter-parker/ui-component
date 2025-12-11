@@ -5,45 +5,53 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-export interface HeroSection12Props {
-  headline: string;
-  description: string;
-  features?: Array<{
-    title: string;
-  }>;
-  avatars?: Array<{
-    src?: string;
-    alt?: string;
-    fallback?: string;
-  }>;
-  socialProof?: string;
-  primaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  secondaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  image?: string;
-  imageAlt?: string;
-  className?: string;
-}
+const defaultData = {
+  headline: "Headline that solves user's main problem",
+  description:
+    "Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.",
+  features: [
+    {
+      title: "Benefit driven feature title",
+    },
+    {
+      title: "Benefit driven feature title",
+    },
+    {
+      title: "Benefit driven feature title",
+    },
+  ],
+  primaryAction: {
+    label: "Get started",
+    href: "#",
+  },
+  secondaryAction: {
+    label: "Explore",
+    href: "#",
+  },
+  avatars: [
+    { fallback: "U1" },
+    { fallback: "U2" },
+    { fallback: "U3" },
+    { fallback: "U4" },
+    { fallback: "U5" },
+  ],
+  socialProof: "Loved by 10,000+ designers",
+  image: undefined,
+  imageAlt: "Hero section",
+};
 
-export function HeroSection12({
-  headline,
-  description,
-  features,
-  avatars,
-  socialProof,
-  primaryAction,
-  secondaryAction,
-  image,
-  imageAlt,
-  className,
-}: HeroSection12Props) {
+export function HeroSection12({ className }: { className?: string } = {}) {
+  const {
+    headline,
+    description,
+    features,
+    primaryAction,
+    secondaryAction,
+    avatars,
+    socialProof,
+    image,
+    imageAlt,
+  } = defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-12 lg:gap-16">
@@ -75,7 +83,6 @@ export function HeroSection12({
                 <Button
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={primaryAction.onClick}
                   asChild={!!primaryAction.href}
                 >
                   {primaryAction.href ? (
@@ -90,7 +97,6 @@ export function HeroSection12({
                   variant="outline"
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={secondaryAction.onClick}
                   asChild={!!secondaryAction.href}
                 >
                   {secondaryAction.href ? (

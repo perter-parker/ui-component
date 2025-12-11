@@ -1,6 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
-import { ArrowRight, Rocket } from "lucide-react";
+import { ArrowRight, Rocket, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -10,35 +10,46 @@ export interface FeatureItem {
   icon?: React.ReactNode;
 }
 
-export interface FeatureSection6Props {
-  headline: string;
-  description: string;
-  features: FeatureItem[];
-  primaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  secondaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  image?: string;
-  imageAlt?: string;
-  className?: string;
-}
+const defaultData = {
+  headline: "Headline that shows solution's impact on user success",
+  description:
+    "Explain in one or two concise sentences how your solution transforms users' challenges into positive outcomes. Focus on the end benefits that matter most to your target audience. Keep it clear and compelling.",
+  features: [
+    {
+      title: "Benefit driven feature title",
+      description:
+        "Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.",
+      icon: <Rocket className="size-5" />,
+    },
+    {
+      title: "Benefit driven feature title",
+      description:
+        "Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.",
+      icon: <Zap className="size-5" />,
+    },
+  ] as FeatureItem[],
+  primaryAction: {
+    label: "Get access",
+    href: "#",
+  },
+  secondaryAction: {
+    label: "Learn more",
+    href: "#",
+  },
+  image: "https://github.com/shadcn.png",
+  imageAlt: "Feature section image",
+};
 
-export function FeatureSection6({
-  headline,
-  description,
-  features,
-  primaryAction,
-  secondaryAction,
-  image,
-  imageAlt,
-  className,
-}: FeatureSection6Props) {
+export function FeatureSection6({ className }: { className?: string } = {}) {
+  const {
+    headline,
+    description,
+    features,
+    primaryAction,
+    secondaryAction,
+    image,
+    imageAlt,
+  } = defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-12 lg:gap-16">
@@ -80,7 +91,6 @@ export function FeatureSection6({
                 <Button
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={primaryAction.onClick}
                   asChild={!!primaryAction.href}
                 >
                   {primaryAction.href ? (
@@ -95,7 +105,6 @@ export function FeatureSection6({
                   variant="outline"
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={secondaryAction.onClick}
                   asChild={!!secondaryAction.href}
                 >
                   {secondaryAction.href ? (

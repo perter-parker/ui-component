@@ -3,28 +3,23 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export interface Navbar2Props {
-  logo?: React.ReactNode;
-  logoHref?: string;
-  links: Array<{
-    label: string;
-    href: string;
-  }>;
+const defaultData = {
+  logoHref: "/",
+  links: [
+    { label: "Products", href: "/products" },
+    { label: "Use cases", href: "/use-cases" },
+    { label: "Docs", href: "/docs" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "FAQ", href: "/faq" },
+  ],
   button: {
-    label: string;
-    href?: string;
-    onClick?: () => void;
-  };
-  className?: string;
-}
+    label: "Get started",
+    href: "/get-started",
+  },
+};
 
-export function Navbar2({
-  logo,
-  logoHref = "/",
-  links,
-  button,
-  className,
-}: Navbar2Props) {
+export function Navbar2({ className }: { className?: string } = {}) {
+  const { logoHref, links, button } = defaultData;
   return (
     <nav className={cn("w-full border-b bg-background", className)}>
       <div className="container flex h-16 items-center justify-between px-4">
@@ -32,19 +27,15 @@ export function Navbar2({
         <div className="flex items-center">
           {logoHref ? (
             <Link href={logoHref} className="flex items-center">
-              {logo || (
-                <div className="size-8 rounded bg-foreground flex items-center justify-center">
-                  <div className="size-4 border-l-2 border-background rotate-45" />
-                </div>
-              )}
+              <div className="size-8 rounded bg-foreground flex items-center justify-center">
+                <div className="size-4 border-l-2 border-background rotate-45" />
+              </div>
             </Link>
           ) : (
             <div className="flex items-center">
-              {logo || (
-                <div className="size-8 rounded bg-foreground flex items-center justify-center">
-                  <div className="size-4 border-l-2 border-background rotate-45" />
-                </div>
-              )}
+              <div className="size-8 rounded bg-foreground flex items-center justify-center">
+                <div className="size-4 border-l-2 border-background rotate-45" />
+              </div>
             </div>
           )}
         </div>
@@ -65,7 +56,6 @@ export function Navbar2({
         {/* Button */}
         <div className="flex items-center ml-auto">
           <Button
-            onClick={button.onClick}
             asChild={!!button.href}
             className="w-full sm:w-auto"
           >

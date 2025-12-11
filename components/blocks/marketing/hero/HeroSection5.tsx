@@ -4,31 +4,28 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
-export interface HeroSection5Props {
-  headline: string;
-  description: string;
-  inputPlaceholder?: string;
-  inputLabel?: string;
-  primaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  videoSrc?: string;
-  videoPoster?: string;
-  className?: string;
-}
+const defaultData = {
+  headline: "Headline that solves user's main problem",
+  description:
+    "Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.",
+  inputPlaceholder: "Your email",
+  primaryAction: {
+    label: "Sign up",
+    href: "#",
+  },
+  videoSrc: undefined,
+  videoPoster: undefined,
+};
 
-export function HeroSection5({
-  headline,
-  description,
-  inputPlaceholder = "Your email",
-  inputLabel,
-  primaryAction,
-  videoSrc,
-  videoPoster,
-  className,
-}: HeroSection5Props) {
+export function HeroSection5({ className }: { className?: string } = {}) {
+  const {
+    headline,
+    description,
+    inputPlaceholder,
+    primaryAction,
+    videoSrc,
+    videoPoster,
+  } = defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-12 lg:gap-16">
@@ -47,13 +44,12 @@ export function HeroSection5({
               type="email"
               placeholder={inputPlaceholder}
               className="flex-1"
-              aria-label={inputLabel || inputPlaceholder}
+              aria-label={inputPlaceholder}
             />
             {primaryAction && (
               <Button
                 size="lg"
                 className="w-full sm:w-auto"
-                onClick={primaryAction.onClick}
                 asChild={!!primaryAction.href}
               >
                 {primaryAction.href ? (

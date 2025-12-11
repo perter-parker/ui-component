@@ -5,7 +5,7 @@ import {
   InputGroupButton,
   InputGroupInput,
   InputGroupText,
-} from './InputGroup'
+} from './input-group'
 import { Search, X } from 'lucide-react'
 
 const meta = {

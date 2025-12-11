@@ -3,34 +3,27 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export interface Navbar5Props {
-  logo?: React.ReactNode;
-  logoHref?: string;
-  links: Array<{
-    label: string;
-    href: string;
-  }>;
+const defaultData = {
+  logoHref: "/",
+  links: [
+    { label: "Products", href: "/products" },
+    { label: "Use cases", href: "/use-cases" },
+    { label: "Docs", href: "/docs" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "FAQ", href: "/faq" },
+  ],
   primaryButton: {
-    label: string;
-    href?: string;
-    onClick?: () => void;
-  };
+    label: "Get started",
+    href: "/get-started",
+  },
   secondaryButton: {
-    label: string;
-    href?: string;
-    onClick?: () => void;
-  };
-  className?: string;
-}
+    label: "Login",
+    href: "/login",
+  },
+};
 
-export function Navbar5({
-  logo,
-  logoHref = "/",
-  links,
-  primaryButton,
-  secondaryButton,
-  className,
-}: Navbar5Props) {
+export function Navbar5({ className }: { className?: string } = {}) {
+  const { logoHref, links, primaryButton, secondaryButton } = defaultData;
   return (
     <nav className={cn("w-full border-b bg-background", className)}>
       <div className="container flex h-16 items-center justify-between px-4">
@@ -38,19 +31,15 @@ export function Navbar5({
         <div className="flex items-center">
           {logoHref ? (
             <Link href={logoHref} className="flex items-center">
-              {logo || (
-                <div className="size-8 rounded bg-foreground flex items-center justify-center">
-                  <div className="size-4 border-l-2 border-background rotate-45" />
-                </div>
-              )}
+              <div className="size-8 rounded bg-foreground flex items-center justify-center">
+                <div className="size-4 border-l-2 border-background rotate-45" />
+              </div>
             </Link>
           ) : (
             <div className="flex items-center">
-              {logo || (
-                <div className="size-8 rounded bg-foreground flex items-center justify-center">
-                  <div className="size-4 border-l-2 border-background rotate-45" />
-                </div>
-              )}
+              <div className="size-8 rounded bg-foreground flex items-center justify-center">
+                <div className="size-4 border-l-2 border-background rotate-45" />
+              </div>
             </div>
           )}
         </div>
@@ -72,7 +61,6 @@ export function Navbar5({
         <div className="flex items-center gap-3 ml-auto">
           <Button
             variant="outline"
-            onClick={secondaryButton.onClick}
             asChild={!!secondaryButton.href}
             className="w-full sm:w-auto"
           >
@@ -83,7 +71,6 @@ export function Navbar5({
             )}
           </Button>
           <Button
-            onClick={primaryButton.onClick}
             asChild={!!primaryButton.href}
             className="w-full sm:w-auto"
           >

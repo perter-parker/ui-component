@@ -2,23 +2,40 @@ import * as React from "react";
 import { Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export interface FeatureSection9Props {
-  headline: string;
-  description: string;
-  features: Array<{
-    icon?: React.ReactNode;
-    title: string;
-    description: string;
-  }>;
-  className?: string;
-}
+const defaultData = {
+  headline: "Headline that shows solution's impact on user success",
+  description:
+    "Explain in one or two concise sentences how your solution transforms users' challenges into positive outcomes. Focus on the end benefits that matter most to your target audience. Keep it clear and compelling.",
+  features: [
+    {
+      icon: <Rocket className="size-6" />,
+      title: "Benefit driven feature title",
+      description:
+        "Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.",
+    },
+    {
+      icon: <Rocket className="size-6" />,
+      title: "Benefit driven feature title",
+      description:
+        "Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.",
+    },
+    {
+      icon: <Rocket className="size-6" />,
+      title: "Benefit driven feature title",
+      description:
+        "Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.",
+    },
+    {
+      icon: <Rocket className="size-6" />,
+      title: "Benefit driven feature title",
+      description:
+        "Shortly describe how this feature solves a specific user problem. Focus on benefits not on technical details.",
+    },
+  ],
+};
 
-export function FeatureSection9({
-  headline,
-  description,
-  features,
-  className,
-}: FeatureSection9Props) {
+export function FeatureSection9({ className }: { className?: string } = {}) {
+  const { headline, description, features } = defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       <div className="flex flex-col gap-12">

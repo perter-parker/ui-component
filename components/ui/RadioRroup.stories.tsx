@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { RadioGroup, RadioGroupItem } from './RadioRroup'
+import { RadioGroup, RadioGroupItem } from './radio-group'
 import { Label } from '@/components/ui/label'
 
 const meta = {

@@ -1,0 +1,16 @@
+{
+  "name": "header-section6",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "blocks/marketing/headers/HeaderSection6.tsx",
+      "content": "import * as React from \"react\";\nimport Link from \"next/link\";\nimport { ChevronRight } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface BreadcrumbItem {\n  label: string;\n  href?: string;\n}\n\nconst defaultData = {\n  breadcrumbs: [\n    { label: \"Home\", href: \"/\" },\n    { label: \"Header Sections\", href: \"#\" },\n    { label: \"Header Section Six\" },\n  ] as BreadcrumbItem[],\n  label: \"Header section\",\n  headline: \"Short engaging headline\",\n  description:\n    \"Lorem ipsum dolor sit amet, consectetur adipiscing elit interdum hendrerit ex vitae sodales.\",\n};\n\nexport function HeaderSection6({ className }: { className?: string } = {}) {\n  const { breadcrumbs, label, headline, description } = defaultData;\n\n  return (\n    <section className={cn(\"w-full bg-foreground text-background py-24 md:py-32\", className)}>\n      <div className=\"container flex flex-col gap-8\">\n        {/* Breadcrumbs */}\n        {breadcrumbs.length > 0 && (\n          <nav className=\"flex items-center gap-2 text-sm text-background/70\">\n            {breadcrumbs.map((item, index) => (\n              <React.Fragment key={index}>\n                {item.href ? (\n                  <Link\n                    href={item.href}\n                    className=\"hover:text-background transition-colors\"\n                  >\n                    {item.label}\n                  </Link>\n                ) : (\n                  <span>{item.label}</span>\n                )}\n                {index < breadcrumbs.length - 1 && (\n                  <ChevronRight className=\"size-4\" />\n                )}\n              </React.Fragment>\n            ))}\n          </nav>\n        )}\n\n        {/* Content */}\n        <div className=\"flex flex-col gap-6 max-w-2xl\">\n          <p className=\"text-sm text-background/70\">{label}</p>\n          <h1 className=\"text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl\">\n            {headline}\n          </h1>\n          <p className=\"text-lg text-background/80 md:text-xl\">\n            {description}\n          </p>\n        </div>\n      </div>\n    </section>\n  );\n}\n\n",
+      "type": "registry:block",
+      "target": "components/blocks/marketing/headers/HeaderSection6.tsx"
+    }
+  ]
+}

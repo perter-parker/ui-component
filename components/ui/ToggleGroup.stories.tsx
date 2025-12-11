@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ToggleGroup, ToggleGroupItem } from './ToggleGroup'
+import { ToggleGroup, ToggleGroupItem } from './toggle-group'
 import { Bold, Italic, Underline } from 'lucide-react'
 
 const meta = {
@@ -15,6 +15,9 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+  args: {
+    type: 'single',
+  },
   render: () => (
     <ToggleGroup type="single">
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
@@ -31,6 +34,9 @@ export const Default: Story = {
 }
 
 export const Multiple: Story = {
+  args: {
+    type: 'multiple',
+  },
   render: () => (
     <ToggleGroup type="multiple">
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
@@ -47,6 +53,9 @@ export const Multiple: Story = {
 }
 
 export const WithText: Story = {
+  args: {
+    type: 'single',
+  },
   render: () => (
     <ToggleGroup type="single">
       <ToggleGroupItem value="left">Left</ToggleGroupItem>

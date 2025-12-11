@@ -23,7 +23,7 @@ import {
   SidebarRail,
   SidebarSeparator,
   SidebarTrigger,
-} from './Sidebar'
+} from './sidebar'
 import * as React from 'react'
 import {
   Home,

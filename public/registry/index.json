@@ -1,5 +1,105 @@
 [
   {
+    "name": "banner-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
+    "name": "bento-grid-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
+    "name": "blog-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
+    "name": "comparison-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "contact-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "button",
+      "checkbox",
+      "input",
+      "label",
+      "textarea"
+    ]
+  },
+  {
+    "name": "c-t-a-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "empty-section2",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
+    "name": "error-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "landing-page-template",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
+    "name": "shade-pro-landing-page",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "avatar",
+      "button"
+    ]
+  },
+  {
+    "name": "shade-pro-landing-page-with-blocks",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
     "name": "f-a-q-section1",
     "type": "registry:block",
     "category": "marketing",
@@ -143,6 +243,26 @@
     ]
   },
   {
+    "name": "gallery-section9",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": [
+      "button"
+    ]
+  },
+  {
+    "name": "header-section6",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [
+      "lucide-react"
+    ],
+    "registryDependencies": []
+  },
+  {
     "name": "hero-section1",
     "type": "registry:block",
     "category": "marketing",
@@ -279,6 +399,13 @@
     ]
   },
   {
+    "name": "logo-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
     "name": "navbar1",
     "type": "registry:block",
     "category": "marketing",
@@ -347,6 +474,27 @@
       "button",
       "toggle-group"
     ]
+  },
+  {
+    "name": "rich-section3",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
+    "name": "stat-section4",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  {
+    "name": "team-section1",
+    "type": "registry:block",
+    "category": "marketing",
+    "dependencies": [],
+    "registryDependencies": []
   },
   {
     "name": "testimonial-section4",

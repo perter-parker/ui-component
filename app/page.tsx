@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { LandingPageTemplate } from "@/components/example/LandingPageTemplate";
+import { LandingPageTemplate } from "@/components/blocks/marketing/examples/LandingPageTemplate";
 import { Rocket, Zap, Shield, Sparkles, Check, Users, BarChart, Globe } from "lucide-react";
 
 export default function HomePage() {

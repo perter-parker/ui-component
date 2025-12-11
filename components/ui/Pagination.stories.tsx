@@ -7,7 +7,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from './Pagination'
+} from './pagination'
 
 const meta = {
   title: 'UI/Pagination',

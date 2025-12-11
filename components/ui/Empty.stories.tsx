@@ -6,7 +6,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from './Empty'
+} from './empty'
 import { Package, Inbox } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 

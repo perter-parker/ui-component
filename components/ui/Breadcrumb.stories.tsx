@@ -7,7 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from './Breadcrumb'
+} from './breadcrumb'
 
 const meta = {
   title: 'UI/Breadcrumb',

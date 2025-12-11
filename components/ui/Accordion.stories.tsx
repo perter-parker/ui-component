@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from './accordion'
+} from './Accordion'
 
 const meta = {
   title: 'UI/Accordion',

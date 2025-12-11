@@ -1,0 +1,18 @@
+{
+  "name": "c-t-a-section1",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "blocks/marketing/cta/CTASection1.tsx",
+      "content": "import * as React from \"react\";\nimport Link from \"next/link\";\nimport { ArrowRight } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\nconst defaultData = {\n  label: \"CTA Section\",\n  headline: \"Action-driving headline that creates urgency\",\n  description:\n    \"Add one or two compelling sentences that reinforce your main value proposition and overcome final objections. End with a clear reason to act now. Align this copy with your CTA button text.\",\n  buttonLabel: \"Get started\",\n  buttonHref: \"#\",\n};\n\nexport function CTASection1({ className }: { className?: string } = {}) {\n  const { label, headline, description, buttonLabel, buttonHref } = defaultData;\n\n  return (\n    <section className={cn(\"w-full bg-foreground text-background py-24 md:py-32\", className)}>\n      <div className=\"container flex flex-col items-center justify-center gap-8 text-center max-w-3xl mx-auto\">\n        {/* Label */}\n        <p className=\"text-sm text-background/70\">{label}</p>\n\n        {/* Headline */}\n        <h2 className=\"text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl\">\n          {headline}\n        </h2>\n\n        {/* Description */}\n        <p className=\"text-lg text-background/80 md:text-xl\">\n          {description}\n        </p>\n\n        {/* Button */}\n        <Button\n          size=\"lg\"\n          variant=\"secondary\"\n          className=\"bg-background text-foreground hover:bg-background/90\"\n          asChild\n        >\n          <Link href={buttonHref} className=\"flex items-center gap-2\">\n            {buttonLabel}\n            <ArrowRight className=\"size-4\" />\n          </Link>\n        </Button>\n      </div>\n    </section>\n  );\n}\n\n",
+      "type": "registry:block",
+      "target": "components/blocks/marketing/cta/CTASection1.tsx"
+    }
+  ]
+}

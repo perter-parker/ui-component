@@ -4,34 +4,36 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export interface HeroSection10Props {
-  headline: string;
-  description: string;
-  primaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  image?: string;
-  imageAlt?: string;
-  logos?: Array<{
-    name: string;
-    src?: string;
-  }>;
-  socialProof?: string;
-  className?: string;
-}
+const defaultData = {
+  headline: "Headline that solves user's main problem",
+  description:
+    "Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.",
+  primaryAction: {
+    label: "Get started",
+    href: "#",
+  },
+  image: "https://github.com/shadcn.png",
+  imageAlt: "Hero section image",
+  socialProof: "Loved by 20K+ creators, including teams at:",
+  logos: [
+    { name: "NEXT.js" },
+    { name: "NEXT.js" },
+    { name: "NEXT.js" },
+    { name: "NEXT.js" },
+    { name: "NEXT.js" },
+  ],
+};
 
-export function HeroSection10({
-  headline,
-  description,
-  primaryAction,
-  image,
-  imageAlt,
-  logos,
-  socialProof,
-  className,
-}: HeroSection10Props) {
+export function HeroSection10({ className }: { className?: string } = {}) {
+  const {
+    headline,
+    description,
+    primaryAction,
+    image,
+    imageAlt,
+    logos,
+    socialProof,
+  } = defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       {/* Centered Text */}
@@ -46,7 +48,6 @@ export function HeroSection10({
           <Button
             size="lg"
             className="w-full sm:w-auto"
-            onClick={primaryAction.onClick}
             asChild={!!primaryAction.href}
           >
             {primaryAction.href ? (

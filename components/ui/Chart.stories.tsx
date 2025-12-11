@@ -3,7 +3,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from './Chart'
+} from './chart'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
 
 const meta = {

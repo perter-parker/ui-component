@@ -12,7 +12,7 @@ import {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-} from './DropdownMenu'
+} from './dropdown-menu'
 import { Button } from '@/components/ui/button'
 import * as React from 'react'
 

@@ -10,11 +10,11 @@ import {
   FieldSet,
   FieldLegend,
   FieldTitle,
-} from './Field'
+} from './field'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Checkbox } from '@/components/ui/checkbox'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-rroup'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 
 const meta = {
   title: 'UI/Field',

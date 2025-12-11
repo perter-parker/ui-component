@@ -13,7 +13,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from './ContextMenu'
+} from './context-menu'
 import * as React from 'react'
 
 const meta = {

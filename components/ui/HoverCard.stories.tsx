@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from './HoverCard'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from './hover-card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import * as React from 'react'

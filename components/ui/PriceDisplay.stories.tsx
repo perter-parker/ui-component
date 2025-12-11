@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { PriceDisplay } from './PriceDisplay'
+import { PriceDisplay } from './price-display'
 
 const meta = {
   title: 'UI/PriceDisplay',

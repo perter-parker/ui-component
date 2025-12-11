@@ -1,0 +1,14 @@
+{
+  "name": "empty-section2",
+  "type": "registry:block",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "blocks/marketing/emptys/EmptySection2.tsx",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nconst defaultData = {\n  label: \"Empty section\",\n  headline: \"Empty landing page section\",\n  description:\n    \"Feel free to utilize this section as a foundational starting point, where you can add your content below.\",\n};\n\nexport function EmptySection2({ className }: { className?: string } = {}) {\n  const { label, headline, description } = defaultData;\n\n  return (\n    <section className={cn(\"container py-24 md:py-32\", className)}>\n      <div className=\"flex flex-col items-center justify-center gap-8 text-center max-w-2xl mx-auto\">\n        {/* Label */}\n        <p className=\"text-sm text-muted-foreground\">{label}</p>\n\n        {/* Headline */}\n        <h2 className=\"text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl\">\n          {headline}\n        </h2>\n\n        {/* Description */}\n        <p className=\"text-lg text-muted-foreground md:text-xl\">\n          {description}\n        </p>\n\n        {/* Placeholder */}\n        <div className=\"w-full p-12 rounded-lg border-2 border-dashed bg-muted\">\n          <p className=\"text-sm text-muted-foreground\">\n            Replace this div with your content\n          </p>\n        </div>\n      </div>\n    </section>\n  );\n}\n\n",
+      "type": "registry:block",
+      "target": "components/blocks/marketing/emptys/EmptySection2.tsx"
+    }
+  ]
+}

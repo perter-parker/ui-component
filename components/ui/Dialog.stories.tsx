@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from './Dialog'
+} from './dialog'
 import { Button } from '@/components/ui/button'
 import * as React from 'react'
 

@@ -4,33 +4,34 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-export interface HeroSection8Props {
-  headline: string;
-  description: string;
-  rating?: number;
-  avatars?: Array<{
-    src?: string;
-    alt?: string;
-    fallback?: string;
-  }>;
-  socialProof?: string;
-  primaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  className?: string;
-}
+const defaultData = {
+  headline: "Headline that solves user's main problem",
+  description:
+    "Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.",
+  primaryAction: {
+    label: "Get started",
+    href: "#",
+  },
+  rating: 5,
+  avatars: [
+    { fallback: "U1" },
+    { fallback: "U2" },
+    { fallback: "U3" },
+    { fallback: "U4" },
+    { fallback: "U5" },
+  ],
+  socialProof: "Loved by 3200+ developers",
+};
 
-export function HeroSection8({
-  headline,
-  description,
-  rating = 5,
-  avatars,
-  socialProof,
-  primaryAction,
-  className,
-}: HeroSection8Props) {
+export function HeroSection8({ className }: { className?: string } = {}) {
+  const {
+    headline,
+    description,
+    primaryAction,
+    rating,
+    avatars,
+    socialProof,
+  } = defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       <div className="flex flex-col items-center text-center gap-6 max-w-3xl mx-auto">
@@ -45,7 +46,6 @@ export function HeroSection8({
           <Button
             size="lg"
             className="w-full sm:w-auto"
-            onClick={primaryAction.onClick}
             asChild={!!primaryAction.href}
           >
             {primaryAction.href ? (

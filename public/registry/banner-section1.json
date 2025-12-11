@@ -1,0 +1,16 @@
+{
+  "name": "banner-section1",
+  "type": "registry:block",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "blocks/marketing/banners/BannerSection1.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport Link from \"next/link\";\nimport { X } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\nconst defaultData = {\n  text: \"New update · Pro blocks are now available in shadcn/ui kit for Figma!\",\n  linkText: \">>>\",\n  linkHref: \"#\",\n};\n\nexport function BannerSection1({ className }: { className?: string } = {}) {\n  const [isVisible, setIsVisible] = React.useState(true);\n  const { text, linkText, linkHref } = defaultData;\n\n  if (!isVisible) {\n    return null;\n  }\n\n  return (\n    <div className={cn(\"w-full bg-foreground text-background\", className)}>\n      <div className=\"container flex items-center justify-center gap-4 px-4 py-3\">\n        <p className=\"text-sm text-center\">\n          {text}{\" \"}\n          {linkHref && (\n            <Link\n              href={linkHref}\n              className=\"inline-flex items-center gap-1 underline underline-offset-4 hover:opacity-80 transition-opacity\"\n            >\n              {linkText}\n            </Link>\n          )}\n        </p>\n        <button\n          onClick={() => setIsVisible(false)}\n          className=\"ml-auto shrink-0 p-1 hover:opacity-80 transition-opacity\"\n          aria-label=\"Close banner\"\n        >\n          <X className=\"size-4\" />\n        </button>\n      </div>\n    </div>\n  );\n}\n\n",
+      "type": "registry:block",
+      "target": "components/blocks/marketing/banners/BannerSection1.tsx"
+    }
+  ]
+}

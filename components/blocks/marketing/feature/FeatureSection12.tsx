@@ -5,42 +5,40 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-export interface FeatureSection12Props {
-  headline: string;
-  description: string;
-  testimonial?: {
-    text: string;
+const defaultData = {
+  headline: "Headline that shows solution's impact on user success",
+  description:
+    "Explain in one or two concise sentences how your solution transforms users' challenges into positive outcomes. Focus on the end benefits that matter most to your target audience. Keep it clear and compelling.",
+  primaryAction: {
+    label: "Get access",
+    href: "#",
+  },
+  secondaryAction: {
+    label: "Learn more",
+    href: "#",
+  },
+  testimonial: {
+    text: "This is a customer testimonial that supports the feature text above. Lorem ipsum dolor sit amet, consectetur adipiscing elit interdum hendrerit ex vitae sodales.",
     author: {
-      name: string;
-      role: string;
-      avatar?: string;
-    };
-  };
-  primaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  secondaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  image?: string;
-  imageAlt?: string;
-  className?: string;
-}
+      name: "Lando Norris",
+      role: "Product Designer",
+      avatar: "https://github.com/shadcn.png",
+    },
+  },
+  image: "https://github.com/shadcn.png",
+  imageAlt: "Feature section image",
+};
 
-export function FeatureSection12({
-  headline,
-  description,
-  testimonial,
-  primaryAction,
-  secondaryAction,
-  image,
-  imageAlt,
-  className,
-}: FeatureSection12Props) {
+export function FeatureSection12({ className }: { className?: string } = {}) {
+  const {
+    headline,
+    description,
+    primaryAction,
+    secondaryAction,
+    testimonial,
+    image,
+    imageAlt,
+  } = defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-12 lg:gap-16">
@@ -59,7 +57,6 @@ export function FeatureSection12({
                 <Button
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={primaryAction.onClick}
                   asChild={!!primaryAction.href}
                 >
                   {primaryAction.href ? (
@@ -74,7 +71,6 @@ export function FeatureSection12({
                   variant="ghost"
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={secondaryAction.onClick}
                   asChild={!!secondaryAction.href}
                 >
                   {secondaryAction.href ? (

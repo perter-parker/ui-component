@@ -10,7 +10,7 @@ import {
   ItemMedia,
   ItemSeparator,
   ItemTitle,
-} from './Item'
+} from './item'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { MoreHorizontal, Settings, User, Mail } from 'lucide-react'

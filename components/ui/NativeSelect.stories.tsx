@@ -3,8 +3,8 @@ import {
   NativeSelect,
   NativeSelectOption,
   NativeSelectOptGroup,
-} from './NativeSelect'
-import { Label } from './Label'
+} from './native-select'
+import { Label } from './label'
 
 const meta = {
   title: 'UI/NativeSelect',

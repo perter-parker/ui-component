@@ -4,37 +4,43 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export interface FeatureSection4Props {
-  headline: string;
-  description: string;
-  primaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  secondaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  features: Array<{
-    title: string;
-  }>;
-  image?: string;
-  imageAlt?: string;
-  className?: string;
-}
+const defaultData = {
+  headline: "Headline that shows solution's impact on user success",
+  description:
+    "Explain in one or two concise sentences how your solution transforms users' challenges into positive outcomes. Focus on the end benefits that matter most to your target audience. Keep it clear and compelling.",
+  primaryAction: {
+    label: "Get access",
+    href: "#",
+  },
+  secondaryAction: {
+    label: "Learn more",
+    href: "#",
+  },
+  features: [
+    {
+      title: "Benefit driven feature title",
+    },
+    {
+      title: "Benefit driven feature title",
+    },
+    {
+      title: "Benefit driven feature title",
+    },
+  ],
+  image: "https://github.com/shadcn.png",
+  imageAlt: "Feature section image",
+};
 
-export function FeatureSection4({
-  headline,
-  description,
-  primaryAction,
-  secondaryAction,
-  features,
-  image,
-  imageAlt,
-  className,
-}: FeatureSection4Props) {
+export function FeatureSection4({ className }: { className?: string } = {}) {
+  const {
+    headline,
+    description,
+    primaryAction,
+    secondaryAction,
+    features,
+    image,
+    imageAlt,
+  } = defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-12 lg:gap-16">
@@ -67,7 +73,6 @@ export function FeatureSection4({
                 <Button
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={primaryAction.onClick}
                   asChild={!!primaryAction.href}
                 >
                   {primaryAction.href ? (
@@ -82,7 +87,6 @@ export function FeatureSection4({
                   variant="outline"
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={secondaryAction.onClick}
                   asChild={!!secondaryAction.href}
                 >
                   {secondaryAction.href ? (

@@ -3,27 +3,21 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export interface HeroSection9Props {
-  headline: string;
-  description: string;
-  primaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  videoSrc?: string;
-  videoPoster?: string;
-  className?: string;
-}
+const defaultData = {
+  headline: "Headline that solves user's main problem",
+  description:
+    "Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.",
+  primaryAction: {
+    label: "Get started",
+    href: "#",
+  },
+  videoSrc: undefined,
+  videoPoster: undefined,
+};
 
-export function HeroSection9({
-  headline,
-  description,
-  primaryAction,
-  videoSrc,
-  videoPoster,
-  className,
-}: HeroSection9Props) {
+export function HeroSection9({ className }: { className?: string } = {}) {
+  const { headline, description, primaryAction, videoSrc, videoPoster } =
+    defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       {/* Centered Text */}
@@ -38,7 +32,6 @@ export function HeroSection9({
           <Button
             size="lg"
             className="w-full sm:w-auto"
-            onClick={primaryAction.onClick}
             asChild={!!primaryAction.href}
           >
             {primaryAction.href ? (

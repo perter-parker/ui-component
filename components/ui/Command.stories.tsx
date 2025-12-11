@@ -9,7 +9,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from './Command'
+} from './command'
 import { Button } from '@/components/ui/button'
 import { Calculator, Calendar, CreditCard, Settings, Smile, User } from 'lucide-react'
 import * as React from 'react'

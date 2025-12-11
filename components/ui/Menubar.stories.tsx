@@ -14,7 +14,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from './Menubar'
+} from './menubar'
 import * as React from 'react'
 
 const meta = {

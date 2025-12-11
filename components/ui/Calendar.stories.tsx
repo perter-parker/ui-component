@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Calendar } from './Calendar'
+import { Calendar } from './calendar'
 import * as React from 'react'
 
 const meta = {

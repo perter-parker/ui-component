@@ -4,33 +4,31 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export interface FeatureSection7Props {
-  headline: string;
-  description: string;
-  primaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  secondaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  image?: string;
-  imageAlt?: string;
-  className?: string;
-}
+const defaultData = {
+  headline: "Headline that shows solution's impact on user success",
+  description:
+    "Explain in one or two concise sentences how your solution transforms users' challenges into positive outcomes. Focus on the end benefits that matter most to your target audience. Keep it clear and compelling.",
+  primaryAction: {
+    label: "Get access",
+    href: "#",
+  },
+  secondaryAction: {
+    label: "Learn more",
+    href: "#",
+  },
+  image: "https://github.com/shadcn.png",
+  imageAlt: "Feature section image",
+};
 
-export function FeatureSection7({
-  headline,
-  description,
-  primaryAction,
-  secondaryAction,
-  image,
-  imageAlt,
-  className,
-}: FeatureSection7Props) {
+export function FeatureSection7({ className }: { className?: string } = {}) {
+  const {
+    headline,
+    description,
+    primaryAction,
+    secondaryAction,
+    image,
+    imageAlt,
+  } = defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       <div className="flex flex-col gap-12">
@@ -48,7 +46,6 @@ export function FeatureSection7({
                 <Button
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={primaryAction.onClick}
                   asChild={!!primaryAction.href}
                 >
                   {primaryAction.href ? (
@@ -63,7 +60,6 @@ export function FeatureSection7({
                   variant="ghost"
                   size="lg"
                   className="w-full sm:w-auto"
-                  onClick={secondaryAction.onClick}
                   asChild={!!secondaryAction.href}
                 >
                   {secondaryAction.href ? (

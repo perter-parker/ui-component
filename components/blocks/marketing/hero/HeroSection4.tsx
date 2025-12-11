@@ -5,31 +5,28 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
-export interface HeroSection4Props {
-  headline: string;
-  description: string;
-  inputPlaceholder?: string;
-  inputLabel?: string;
-  primaryAction?: {
-    label: string;
-    onClick?: () => void;
-    href?: string;
-  };
-  image?: string;
-  imageAlt?: string;
-  className?: string;
-}
+const defaultData = {
+  headline: "Headline that solves user's main problem",
+  description:
+    "Follow with one or two sentences that expand on your value proposition. Focus on key benefits and address why users should take action now. Keep it scannable, short and benefit-driven.",
+  inputPlaceholder: "Your email",
+  primaryAction: {
+    label: "Sign up",
+    href: "#",
+  },
+  image: "https://github.com/shadcn.png",
+  imageAlt: "Hero section image",
+};
 
-export function HeroSection4({
-  headline,
-  description,
-  inputPlaceholder = "Your email",
-  inputLabel,
-  primaryAction,
-  image,
-  imageAlt,
-  className,
-}: HeroSection4Props) {
+export function HeroSection4({ className }: { className?: string } = {}) {
+  const {
+    headline,
+    description,
+    inputPlaceholder,
+    primaryAction,
+    image,
+    imageAlt,
+  } = defaultData;
   return (
     <section className={cn("container py-24 md:py-32", className)}>
       <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-12 lg:gap-16">
@@ -48,13 +45,12 @@ export function HeroSection4({
               type="email"
               placeholder={inputPlaceholder}
               className="flex-1"
-              aria-label={inputLabel || inputPlaceholder}
+              aria-label={inputPlaceholder}
             />
             {primaryAction && (
               <Button
                 size="lg"
                 className="w-full sm:w-auto"
-                onClick={primaryAction.onClick}
                 asChild={!!primaryAction.href}
               >
                 {primaryAction.href ? (

@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-} from './NavigationMenu'
+} from './navigation-menu'
 import * as React from 'react'
 
 const meta = {

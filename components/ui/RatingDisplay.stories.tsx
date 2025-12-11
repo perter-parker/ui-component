@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { RatingDisplay } from './RatingDisplay'
+import { RatingDisplay } from './rating-display'
 
 const meta = {
   title: 'UI/RatingDisplay',

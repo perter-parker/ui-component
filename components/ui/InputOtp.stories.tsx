@@ -4,7 +4,7 @@ import {
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from './InputOtp'
+} from './input-otp'
 import * as React from 'react'
 
 const meta = {

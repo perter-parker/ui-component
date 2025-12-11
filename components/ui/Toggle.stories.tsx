@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Toggle } from './Toggle'
+import { Toggle } from './toggle'
 import { Bold, Italic, Underline } from 'lucide-react'
 
 const meta = {

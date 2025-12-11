@@ -5,8 +5,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from './Carousel'
-import { Card, CardContent } from './Card'
+} from './carousel'
+import { Card, CardContent } from './card'
 
 const meta = {
   title: 'UI/Carousel',

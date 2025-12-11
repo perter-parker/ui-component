@@ -20,40 +20,70 @@ import {
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export interface Navbar6Props {
-  logo?: React.ReactNode;
-  logoHref?: string;
-  links: Array<{
-    label: string;
-    href: string;
-    items?: Array<{
-      label: string;
-      href: string;
-      icon?: React.ReactNode;
-      description?: string;
-    }>;
-  }>;
-  primaryButton: {
-    label: string;
-    href?: string;
-    onClick?: () => void;
-  };
-  secondaryButton: {
-    label: string;
-    href?: string;
-    onClick?: () => void;
-  };
-  className?: string;
-}
+import {
+  Component,
+  Plug,
+  Blocks,
+  FileText,
+  Palette,
+} from "lucide-react";
 
-export function Navbar6({
-  logo,
-  logoHref = "/",
-  links,
-  primaryButton,
-  secondaryButton,
-  className,
-}: Navbar6Props) {
+const defaultData = {
+  logoHref: "/",
+  links: [
+    {
+      label: "Products",
+      href: "/products",
+      items: [
+        {
+          label: "Components",
+          href: "/products/components",
+          icon: <Component className="size-4" />,
+          description: "Pixel-perfect shadcn/ui components for Figma",
+        },
+        {
+          label: "Plugin",
+          href: "/products/plugin",
+          icon: <Plug className="size-4" />,
+          description: "Go from Figma to shadcn/ui in seconds",
+        },
+        {
+          label: "Blocks",
+          href: "/products/blocks",
+          icon: <Blocks className="size-4" />,
+          description: "Top-quality blocks for Figma and React",
+        },
+        {
+          label: "Templates",
+          href: "/products/templates",
+          icon: <FileText className="size-4" />,
+          description: "Figma and React templates for shadcn/ui",
+        },
+        {
+          label: "Themes",
+          href: "/products/themes",
+          icon: <Palette className="size-4" />,
+          description: "Free shadcn/ui themes for your next project",
+        },
+      ],
+    },
+    { label: "Resources", href: "/resources" },
+    { label: "Docs", href: "/docs" },
+    { label: "Help", href: "/help" },
+    { label: "Pricing", href: "/pricing" },
+  ],
+  primaryButton: {
+    label: "Buy now",
+    href: "/buy",
+  },
+  secondaryButton: {
+    label: "Preview",
+    href: "/preview",
+  },
+};
+
+export function Navbar6({ className }: { className?: string } = {}) {
+  const { logoHref, links, primaryButton, secondaryButton } = defaultData;
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   return (
@@ -63,19 +93,15 @@ export function Navbar6({
         <div className="flex items-center">
           {logoHref ? (
             <Link href={logoHref} className="flex items-center">
-              {logo || (
-                <div className="size-8 rounded bg-foreground flex items-center justify-center">
-                  <div className="size-4 border-l-2 border-background rotate-45" />
-                </div>
-              )}
+              <div className="size-8 rounded bg-foreground flex items-center justify-center">
+                <div className="size-4 border-l-2 border-background rotate-45" />
+              </div>
             </Link>
           ) : (
             <div className="flex items-center">
-              {logo || (
-                <div className="size-8 rounded bg-foreground flex items-center justify-center">
-                  <div className="size-4 border-l-2 border-background rotate-45" />
-                </div>
-              )}
+              <div className="size-8 rounded bg-foreground flex items-center justify-center">
+                <div className="size-4 border-l-2 border-background rotate-45" />
+              </div>
             </div>
           )}
         </div>
@@ -131,7 +157,6 @@ export function Navbar6({
         <div className="hidden md:flex items-center gap-3 ml-auto">
           <Button
             variant="outline"
-            onClick={secondaryButton.onClick}
             asChild={!!secondaryButton.href}
             className="w-full sm:w-auto"
           >
@@ -142,7 +167,6 @@ export function Navbar6({
             )}
           </Button>
           <Button
-            onClick={primaryButton.onClick}
             asChild={!!primaryButton.href}
             className="w-full sm:w-auto"
           >
@@ -195,7 +219,6 @@ export function Navbar6({
               <div className="mt-4 flex flex-col gap-2 pt-4 border-t">
                 <Button
                   variant="outline"
-                  onClick={secondaryButton.onClick}
                   asChild={!!secondaryButton.href}
                   className="w-full"
                 >
@@ -208,7 +231,6 @@ export function Navbar6({
                   )}
                 </Button>
                 <Button
-                  onClick={primaryButton.onClick}
                   asChild={!!primaryButton.href}
                   className="w-full"
                 >

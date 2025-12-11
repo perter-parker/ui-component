@@ -3,33 +3,27 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export interface Navbar3Props {
-  logo?: React.ReactNode;
-  logoHref?: string;
-  links: Array<{
-    label: string;
-    href: string;
-  }>;
-  signInLink?: {
-    label: string;
-    href: string;
-  };
+const defaultData = {
+  logoHref: "/",
+  links: [
+    { label: "Products", href: "/products" },
+    { label: "Use cases", href: "/use-cases" },
+    { label: "Docs", href: "/docs" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "FAQ", href: "/faq" },
+  ],
+  signInLink: {
+    label: "Sign in",
+    href: "/sign-in",
+  },
   signUpButton: {
-    label: string;
-    href?: string;
-    onClick?: () => void;
-  };
-  className?: string;
-}
+    label: "Sign up",
+    href: "/sign-up",
+  },
+};
 
-export function Navbar3({
-  logo,
-  logoHref = "/",
-  links,
-  signInLink,
-  signUpButton,
-  className,
-}: Navbar3Props) {
+export function Navbar3({ className }: { className?: string } = {}) {
+  const { logoHref, links, signInLink, signUpButton } = defaultData;
   return (
     <nav className={cn("w-full border-b bg-background", className)}>
       <div className="container flex h-16 items-center justify-between px-4">
@@ -37,19 +31,15 @@ export function Navbar3({
         <div className="flex items-center">
           {logoHref ? (
             <Link href={logoHref} className="flex items-center">
-              {logo || (
-                <div className="size-8 rounded bg-foreground flex items-center justify-center">
-                  <div className="size-4 border-l-2 border-background rotate-45" />
-                </div>
-              )}
+              <div className="size-8 rounded bg-foreground flex items-center justify-center">
+                <div className="size-4 border-l-2 border-background rotate-45" />
+              </div>
             </Link>
           ) : (
             <div className="flex items-center">
-              {logo || (
-                <div className="size-8 rounded bg-foreground flex items-center justify-center">
-                  <div className="size-4 border-l-2 border-background rotate-45" />
-                </div>
-              )}
+              <div className="size-8 rounded bg-foreground flex items-center justify-center">
+                <div className="size-4 border-l-2 border-background rotate-45" />
+              </div>
             </div>
           )}
         </div>
@@ -78,7 +68,6 @@ export function Navbar3({
             </Link>
           )}
           <Button
-            onClick={signUpButton.onClick}
             asChild={!!signUpButton.href}
             className="w-full sm:w-auto"
           >

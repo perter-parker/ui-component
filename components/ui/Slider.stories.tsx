@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Slider } from './Slider'
+import { Slider } from './slider'
 import * as React from 'react'
 
 const meta = {

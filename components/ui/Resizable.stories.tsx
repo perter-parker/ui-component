@@ -3,7 +3,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from './Resizable'
+} from './resizable'
 
 const meta = {
   title: 'UI/Resizable',

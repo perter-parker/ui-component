@@ -138,7 +138,7 @@ export function LandingPageTemplate({
       <Navbar1 />
       <main className="flex-1">
         <HeroSection7 />
-        <FeatureSection9 {...feature9} />
+        <FeatureSection9 />
         <FeatureSection3  />
         <TestimonialSection4  />
         <PricingSection4  />
